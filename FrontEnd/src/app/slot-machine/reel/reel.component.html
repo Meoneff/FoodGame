@@ -1,0 +1,13 @@
+<div 
+  class="reel" 
+  [class.spinning]="isSpinning"
+  [class.margin-top-2]="reelIndex === 0 || reelIndex === 5"
+  [class.margin-top-3]="reelIndex === 1 || reelIndex === 4"
+  [style.--reel-index]="reelIndex"
+>
+  <div class="reel-content">
+    <div *ngFor="let symbol of getVisibleSymbols()" class="symbol">
+      {{ getSymbolIcon(symbol) }}
+    </div>
+  </div>
+</div>

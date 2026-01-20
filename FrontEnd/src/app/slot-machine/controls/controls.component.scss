@@ -1,0 +1,80 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin: 30px 0;
+
+  button {
+    padding: 12px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.bet-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  button {
+    background: #00bcd4;
+    color: white;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    min-width: 50px;
+  }
+
+  .bet-amount {
+    font-size: 1.3em;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
+}
+
+.spin-button {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  color: white;
+  padding: 15px 50px;
+  font-size: 1.2em;
+  min-width: 200px;
+
+  &:not(:disabled):active {
+    transform: translateY(2px);
+  }
+}
+
+.reset-button {
+  background: #9c27b0;
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .spin-button {
+    min-width: 150px;
+    padding: 12px 30px;
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,66 @@
+.reel {
+  background: transparent;
+  border-radius: 0;
+  overflow: hidden;
+  min-height: auto;
+  transition: all 0.2s ease;
+
+  &.spinning {
+    .reel-content {
+      animation: reelScroll 1s linear forwards;
+    }
+  }
+
+  &.margin-top-2 {
+    margin-top: 3rem;
+  }
+
+  &.margin-top-3 {
+    margin-top: 2rem;
+  }
+
+  .reel-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px 0;
+    gap: 5px;
+    overflow: hidden;
+  }
+
+  .symbol {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 1.6em;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    min-height: 50px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
+    }
+  }
+}
+
+@keyframes reelScroll {
+  0% {
+    transform: translateY(-300px);
+  }
+  85% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .reel {
+    min-height: 120px;
+  }
+}

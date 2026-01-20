@@ -1,0 +1,37 @@
+<div class="slot-machine-container">
+  <app-slot-header
+    [points]="points"
+    [betAmount]="betAmount"
+  ></app-slot-header>
+
+  <div class="multiplier-display">
+    <div *ngFor="let multiplier of MULTIPLIER_MAP" class="multiplier-badge">
+      {{ multiplier }}x
+    </div>
+  </div>
+
+  <div class="reels-container">
+    <app-reel
+      *ngFor="let reel of reels; let i = index"
+      [reel]="reel"
+      [reelIndex]="i"
+      [isSpinning]="isSpinning"
+      [rowsVisible]="REEL_ROWS_MAP[i]"
+    ></app-reel>
+  </div>
+
+  <app-win-display [winInfo]="lastWin"></app-win-display>
+
+  <app-slot-controls
+    [isSpinning]="isSpinning"
+    [points]="points"
+    [betAmount]="betAmount"
+    (spin)="spin()"
+    (increaseBet)="onIncreaseBet()"
+    (decreaseBet)="onDecreaseBet()"
+    (reset)="onResetGame()"
+  ></app-slot-controls>
+
+  <app-slot-info></app-slot-info>
+</div>
+

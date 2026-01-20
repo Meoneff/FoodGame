@@ -1,0 +1,26 @@
+<div class="controls">
+  <div class="bet-controls">
+    <button (click)="onDecreaseBet()" [disabled]="betAmount <= 10 || isSpinning">
+      Bet -
+    </button>
+    <span class="bet-amount">{{ betAmount }}</span>
+    <button
+      (click)="onIncreaseBet()"
+      [disabled]="betAmount >= points || isSpinning"
+    >
+      Bet +
+    </button>
+  </div>
+
+  <button
+    class="spin-button"
+    (click)="onSpin()"
+    [disabled]="isSpinning || points < betAmount"
+  >
+    {{ isSpinning ? 'SPINNING...' : 'SPIN' }}
+  </button>
+
+  <button class="reset-button" (click)="onReset()">
+    Reset Game
+  </button>
+</div>

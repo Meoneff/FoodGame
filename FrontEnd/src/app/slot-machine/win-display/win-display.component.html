@@ -1,0 +1,8 @@
+<div class="win-display" *ngIf="winInfo">
+  <div class="win-message">
+    <h2>🎉 WINNER! 🎉</h2>
+    <p>Symbols: {{ winInfo.matchedSymbols[0] }}</p>
+    <p>Multiplier: x{{ winInfo.multiplier }}</p>
+    <p class="win-amount">Won: {{ winInfo.winAmount }} Points!</p>
+  </div>
+</div>
